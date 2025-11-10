@@ -6,3 +6,9 @@
 # 💡 Overview
 
 #### Alopecia Areata diagnosis often relies on visual inspection. This project aims to leverage deep learning, specifically a powerful pre-trained CNN like VGG16, to automate and assist in the accurate and early detection or classification of AA images.
+
+
+
+# VGG16 Architecture:
+
+#### We utilize Transfer Learning, where the VGG16 model is initialized with weights trained on the massive ImageNet dataset. The final layers are then adapted and fine-tuned on the specific hair disease dataset to perform the binary (or multi-class) classification task.
