@@ -66,3 +66,6 @@ cd Alopecia-Areata-VGG16</code>
 ## Accuracy    98.5%         94.2%
 ## Loss        0.05          0.18
 ## F1-Score    0.98          0.93
+
+## Final epoch summary:
+## accuracy: 1.0000 - loss: 0.0120 - val_accuracy: 1.0000 - val_loss: 0.0067 - learning_rate: 1.0000e-04 
