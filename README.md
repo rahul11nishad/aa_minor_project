@@ -1,3 +1,73 @@
+# ✅✅🎯🎯README: Swin-T Image Classification for Alopecia Detection
+
+This notebook demonstrates a complete workflow for training and evaluating an image classification model using the Swin-T architecture for detecting Alopecia.
+
+## 1. Dataset Loading and Preprocessing 💯💯💯
+- **Data Source**: Images are loaded from a specified directory (`/content/drive/MyDrive/dat`).
+- **Transforms**: Custom image transformations are applied, including `RandomResizedCrop` and `RandomHorizontalFlip` for training, and `Resize` with `CenterCrop` for validation/testing. Normalization with ImageNet statistics is used.
+- **Splitting**: The dataset is split into 80% training, 10% validation, and 10% testing sets.
+
+## 2. Model, Optimizer, and Loss 💡💡💡🧑‍💻
+- **Model**: A pre-trained Swin-T model (`swin_t_weights=models.Swin_T_Weights.IMAGENET1K_V1`) is loaded.
+- **Custom Head**: The classification head of the Swin-T model is replaced to match the number of classes in the dataset.
+- **Loss Function**: `CrossEntropyLoss` with label smoothing is used.
+- **Optimizer**: `AdamW` optimizer is configured with a learning rate and weight decay.
+- **Scheduler**: `CosineAnnealingLR` is used for learning rate scheduling.
+
+## 3. Training and Validation Loops
+- The model is trained for 10 epochs using custom `train_one_epoch` and `validate` functions.
+- Training and validation loss and accuracy are monitored and stored.
+
+## 4. Evaluation and Visualization
+- **Loss Plot**: Training and validation loss curves are visualized to assess training progress and detect overfitting.
+- **Confusion Matrix**: A confusion matrix is generated and displayed for the test set predictions to understand classification performance per class.
+- **Final Testing**: The model's final accuracy on the test set is reported.
+- **Detailed Evaluation**: A classification report (precision, recall, F1-score) and ROC-AUC score are calculated and displayed, along with an ROC curve plot.
+- **Prediction Visualization**: Sample images from the test set are displayed with their actual and predicted labels, along with prediction confidence.
+
+
+## 5. Save and Load Model
+- The trained model's `state_dict` is saved to a `.pth` file.
+- Demonstrates how to load the saved model and set it up for inference.
+
+## 6. Inference with Saved Model
+- The loaded model is used to make predictions on new images.
+- A sample image (taken from the test loader for demonstration) is preprocessed and passed through the loaded model to obtain and display its predicted class and confidence.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 🧬 Alopecia Areata Classification using VGG16 (Transfer Learning)
 #### This repository contains code and resources for classifying images of Alopecia Areata (AA), a common autoimmune hair loss condition, 
 #### from healthy scalps using a VGG16 pre-trained Convolutional Neural Network (CNN) via Transfer Learning.
